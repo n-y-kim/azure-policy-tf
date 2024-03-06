@@ -22,10 +22,7 @@
             }
         },
         "metadata": {
-            "securityCenter": {
-                "RemediationDescription": "Subnets should have NSG when being created.",
-                "Severity": "High"
-            }
+            "category": "Network"
         }
     }
 }
