@@ -40,7 +40,7 @@
 
 ### 1. `name` 값은 수정하지 않아도 됨.
 
-Azure policy github에서 json 파일을 다운 받아보면 `name` 값이 정해져있습니다.
+[Azure policy github](https://github.com/Azure/azure-policy/tree/master/built-in-policies/policyDefinitions)에서 json 파일을 다운 받아보면 `name` 값이 정해져있습니다.
 
 예시)
 
