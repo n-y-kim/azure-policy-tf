@@ -1,0 +1,31 @@
+{
+    "properties": {
+        "displayName": "Subnet need NSG assigned to be created - Duplicate",
+        "policyType": "Custom",
+        "description": "Block creation of subnet that has no NSG assigned.",
+        "mode": "All",
+        "policyRule": {
+            "if": {
+                "allOf": [
+                    {
+                        "field": "type",
+                        "equals": "Microsoft.Network/virtualNetworks/subnets"
+                    },
+                    {
+                        "field": "Microsoft.Network/virtualNetworks/subnets/networkSecurityGroup.id",
+                        "exists": false
+                    }
+                ]
+            } ,
+            "then": {
+                "effect": "Deny"
+            }
+        },
+        "metadata": {
+            "securityCenter": {
+                "RemediationDescription": "Subnets should have NSG when being created.",
+                "Severity": "High"
+            }
+        }
+    }
+}
