@@ -1,5 +1,30 @@
 # azure-policy-tf
 
+## 개요
+
+Azure Policy파일은 json으로 되어 있으므로 json파일을 별도의 디렉토리에 리소스 별로 관리한다. 테라폼은 이 디렉토리에 있는 모든 json들을 반영한다. 
+
+## Quick Start
+
+### 본 Repo를 Clone
+
+```bash
+$ git clone <this-repository>
+```
+
+### Policy 작성
+
+* 적용할 built-in policy들은 [공식 repo](https://github.com/Azure/azure-policy/tree/master/built-in-policies/policyDefinitions)에서 받아 `builtin-policies`에 넣는다. 
+* 커스텀 policy들은 [여기](https://learn.microsoft.com/ko-kr/azure/governance/policy/tutorials/create-custom-policy-definition)름 참고하여 직접 json으로 작성하며 `custom-policies`에 넣는다.
+
+### Policy definition 생성
+
+```bash
+
+$ terraform plan -out tfplan
+$ terraform apply tfplan
+```
+
 ## 폴더 구조
 ```bash
 .
