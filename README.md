@@ -15,7 +15,7 @@ $ git clone <this-repository>
 ### Policy 작성
 
 * 적용할 built-in policy들은 [공식 repo](https://github.com/Azure/azure-policy/tree/master/built-in-policies/policyDefinitions)에서 받아 `builtin-policies`에 넣어 놓음
-* 커스텀 policy들은 [여기](https://learn.microsoft.com/ko-kr/azure/governance/policy/tutorials/create-custom-policy-definition)름 참고하여 직접 json으로 작성하며 `custom-policies`에 넣어 놓음.
+* 커스텀 policy들은 [여기](https://learn.microsoft.com/ko-kr/azure/governance/policy/tutorials/create-custom-policy-definition)를를 참고하여 직접 json으로 작성하며 `custom-policies`에 넣어 놓음.
 
 ### Policy definition 생성
 
@@ -123,8 +123,8 @@ $ terraform apply tfplan
 
 이 Built in policy를 식별하게 하는 문자열이므로, 이미 기본 Built in으로 배포되어 있기 때문에 같은 name으로 정책을 만들 수 없음.
 
-따라서 `modules/policy/policy_apply.tf` 에서 모든 정책의 `name`을 `DisplayName`으로 변경하여 배포합니다. (해당 파일 L14) 사용자가 따로 해당 파일의 name을 변경할 필요가 없음.
+따라서 `modules/policy/policy_apply.tf` 에서 모든 정책의 `name`을 `DisplayName`으로 변경하여 배포. (해당 파일 L14) **사용자가 따로 해당 파일의 name을 변경할 필요가 없음**.
 
 ### 2. `displayName` 값이나 `description` 값은 수정 권고.
 
-이미 존재하는 Built-in policy와 이름이 겹치지 않게 하기 위해 `displayName` 값을 수정하는 것을 권고합니다. 가독성을 위해 한글로 작성하는 것도 좋음.
+이미 존재하는 Built-in policy와 이름이 겹치지 않게 하기 위해 `displayName` 값을 수정하는 것을 권고. 가독성을 위해 한글로 작성하는 것도 좋음.
