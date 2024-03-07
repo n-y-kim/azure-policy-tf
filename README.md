@@ -65,7 +65,7 @@ $ terraform apply tfplan
 
 ### 1. `name` 값은 수정하지 않아도 됨.
 
-[Azure policy github](https://github.com/Azure/azure-policy/tree/master/built-in-policies/policyDefinitions)에서 json 파일을 다운 받아보면 `name` 값이 정해져 있음음.
+[Azure policy github](https://github.com/Azure/azure-policy/tree/master/built-in-policies/policyDefinitions)에서 json 파일을 다운 받아보면 `name` 값이 정해져 있음.
 
 예시)
 
@@ -127,4 +127,4 @@ $ terraform apply tfplan
 
 ### 2. `displayName` 값이나 `description` 값은 수정 권고.
 
-이미 존재하는 Built-in policy와 이름이 겹치지 않게 하기 위해 `displayName` 값을 수정하는 것을 권고합니다. 가독성을 위해 한글로 작성하는 것도 좋음음.
+이미 존재하는 Built-in policy와 이름이 겹치지 않게 하기 위해 `displayName` 값을 수정하는 것을 권고합니다. 가독성을 위해 한글로 작성하는 것도 좋음.
