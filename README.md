@@ -1,5 +1,30 @@
 # azure-policy-tf
 
+## 개요
+
+Azure Policy파일은 json으로 되어 있으므로 json파일을 별도의 디렉토리에 리소스 별로 관리함. 테라폼은 이 디렉토리에 있는 모든 json들을 반영함.
+
+## Quick Start
+
+### 본 Repo를 Clone
+
+```bash
+$ git clone <this-repository>
+```
+
+### Policy 작성
+
+* 적용할 built-in policy들은 [공식 repo](https://github.com/Azure/azure-policy/tree/master/built-in-policies/policyDefinitions)에서 받아 `builtin-policies`에 넣어 놓음
+* 커스텀 policy들은 [여기](https://learn.microsoft.com/ko-kr/azure/governance/policy/tutorials/create-custom-policy-definition)름 참고하여 직접 json으로 작성하며 `custom-policies`에 넣어 놓음.
+
+### Policy definition 생성
+
+```bash
+
+$ terraform plan -out tfplan
+$ terraform apply tfplan
+```
+
 ## 폴더 구조
 ```bash
 .
@@ -40,7 +65,7 @@
 
 ### 1. `name` 값은 수정하지 않아도 됨.
 
-[Azure policy github](https://github.com/Azure/azure-policy/tree/master/built-in-policies/policyDefinitions)에서 json 파일을 다운 받아보면 `name` 값이 정해져있습니다.
+[Azure policy github](https://github.com/Azure/azure-policy/tree/master/built-in-policies/policyDefinitions)에서 json 파일을 다운 받아보면 `name` 값이 정해져 있음음.
 
 예시)
 
@@ -96,10 +121,10 @@
 
 ```
 
-이 Built in policy를 식별하게 하는 문자열이므로, 이미 기본 Built in으로 배포되어 있기 때문에 같은 name으로 정책을 만들 수 없습니다.
+이 Built in policy를 식별하게 하는 문자열이므로, 이미 기본 Built in으로 배포되어 있기 때문에 같은 name으로 정책을 만들 수 없음.
 
-따라서 `modules/policy/policy_apply.tf` 에서 모든 정책의 `name`을 `DisplayName`으로 변경하여 배포합니다. (해당 파일 L14) 사용자가 따로 해당 파일의 name을 변경할 필요가 없습니다.
+따라서 `modules/policy/policy_apply.tf` 에서 모든 정책의 `name`을 `DisplayName`으로 변경하여 배포합니다. (해당 파일 L14) 사용자가 따로 해당 파일의 name을 변경할 필요가 없음.
 
 ### 2. `displayName` 값이나 `description` 값은 수정 권고.
 
-이미 존재하는 Built-in policy와 이름이 겹치지 않게 하기 위해 `displayName` 값을 수정하는 것을 권고합니다. 가독성을 위해 한글로 작성하는 것도 좋습니다.
+이미 존재하는 Built-in policy와 이름이 겹치지 않게 하기 위해 `displayName` 값을 수정하는 것을 권고합니다. 가독성을 위해 한글로 작성하는 것도 좋음음.
